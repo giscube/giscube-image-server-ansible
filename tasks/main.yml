@@ -6,22 +6,6 @@
     - cgi-mapserver
     - libgdal-dev
 
-# deprecated
-- name: create imageserver fcgi directory
-  file: path={{ applications_server_fcgis_directory }}/imageserver state=directory
-      owner=www-data
-      group=www-data
-      mode=0755
-
-# deprecated
-- name: copy imageserver fcgi configuration
-  copy:
-    src=data/fcgis/imageserver/uwsgi_ondemand.ini
-    dest={{ applications_server_fcgis_directory }}/imageserver/
-    owner=www-data
-    group=www-data
-    mode=0644
-
 - name: create imageserver fcgi directory
   file: path={{ applications_server_fcgis_directory }}/giscube_imageserver state=directory
       owner=www-data
