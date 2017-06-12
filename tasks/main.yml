@@ -7,7 +7,7 @@
     - libgdal-dev
 
 - name: create imageserver fcgi directory
-  file: path={{ applications_server_fcgis_directory }}/giscube_imageserver state=directory
+  file: path={{ giscube_fcgis_directory }}/giscube_imageserver state=directory
       owner=www-data
       group=www-data
       mode=0755
@@ -15,7 +15,7 @@
 - name: copy imageserver fcgi configuration
   copy:
     src=data/fcgis/imageserver/uwsgi_ondemand.ini
-    dest={{ applications_server_fcgis_directory }}/giscube_imageserver/
+    dest={{ giscube_fcgis_directory }}/giscube_imageserver/
     owner=www-data
     group=www-data
     mode=0644
