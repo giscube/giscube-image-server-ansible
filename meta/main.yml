@@ -1,0 +1,5 @@
+---
+
+## not enforced
+# dependencies:
+#  - { role: applications_server }
