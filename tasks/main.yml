@@ -1,10 +1,11 @@
 ---
 
 - name: install mapserver and libgdal
-  apt: name={{ item }} state=latest
-  with_items:
+  apt:
+    name:
     - cgi-mapserver
     - libgdal-dev
+    state: latest
 
 - name: create imageserver fcgi directory
   file: path={{ giscube_fcgis_directory }}/giscube_imageserver state=directory
